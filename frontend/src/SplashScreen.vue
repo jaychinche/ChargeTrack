@@ -9,7 +9,7 @@
         </svg>
       </div>
       
-      <h1 class="splash-title">EVConnect</h1>
+      <h1 class="splash-title">ChargeTrack</h1>
       <p class="splash-subtitle">Powering the Future of Mobility</p>
       
       <div class="loader"></div>
