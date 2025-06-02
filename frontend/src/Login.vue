@@ -2,7 +2,7 @@
   <div class="auth-page">
     <header class="header">
       <div class="header-content">
-        <h1>&nbsp;&nbsp;&nbsp;ChargeTrack</h1>
+        <h1 class ="title">&nbsp;&nbsp;&nbsp;ChargeTrack</h1>
         <p class="tagline">Smart EV Charging Management System</p>
       </div>
     </header>
@@ -17,11 +17,11 @@
       <div class="form-container sign-up-container">
         <form @submit.prevent="handleSignUp">
           <h1>Create Account</h1>
-          <div class="social-container">
+          <!-- <div class="social-container">
             <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
             <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
             <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-          </div>
+          </div> -->
           <span>or use your email for registration</span>
           <input type="text" placeholder="Username" v-model="signUpData.username" required />
           <input type="email" placeholder="Email" v-model="signUpData.email" required />
@@ -31,10 +31,13 @@
             <option value="user">User</option>
             <option value="admin">Admin</option>
           </select>
+          <p class="text-center">Already have an account? <a href="#" @click="isSignUp = false">Sign In</a></p>
           <p v-if="error" class="error-message">{{ error }}</p>
           <button type="submit" :disabled="loading">
             {{ loading ? 'Processing...' : 'Sign Up' }}
           </button>
+         
+          
         </form>
       </div>
 
@@ -50,10 +53,12 @@
           <input type="email" placeholder="Email" v-model="signInData.email" required />
           <input type="password" placeholder="Password" v-model="signInData.password" required />
           <a href="#">Forgot your password?</a>
+          <p class="text-center">Don't have an account? <a href="#" @click="isSignUp = true">Sign Up</a></p>
           <p v-if="error" class="error-message">{{ error }}</p>
           <button type="submit" :disabled="loading">
             {{ loading ? 'Signing In...' : 'Sign In' }}
           </button>
+          
         </form>
       </div>
 
@@ -64,6 +69,7 @@
             <h1>Welcome Back to ChargeTrack!</h1>
             <p>Log in with your personal details to continue tracking and managing your EV charging sessions.</p>
             <button class="ghost" @click="isSignUp = false">Sign In</button>
+             
           </div>
           <div class="overlay-panel overlay-right">
             <h1>Hello and Welcome to ChargeTrack!</h1>
@@ -234,13 +240,30 @@ export default {
   align-items: center;
   flex-direction: column;
   font-family: 'Montserrat', sans-serif;
-  height: 100vh;
-  margin: -20px 0 50px;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 2rem;
+  color: #003366;
+}
+
+.tagline {
+  color: #666;
+  font-size: 1rem;
 }
 
 h1 {
   font-weight: bold;
   margin: 0;
+  font-size: 1.5rem;
 }
 
 h2 {
@@ -305,7 +328,7 @@ form {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 0 50px;
+  padding: 0 40px;
   height: 100%;
   text-align: center;
 }
@@ -332,8 +355,8 @@ select {
     0 10px 10px rgba(0, 0, 0, 0.22);
   position: relative;
   overflow: hidden;
-  width: 900px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 900px;
   min-height: 480px;
 }
 
@@ -369,15 +392,11 @@ select {
 }
 
 @keyframes show {
-
-  0%,
-  49.99% {
+  0%, 49.99% {
     opacity: 0;
     z-index: 1;
   }
-
-  50%,
-  100% {
+  50%, 100% {
     opacity: 1;
     z-index: 5;
   }
@@ -422,7 +441,7 @@ select {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 0 40px;
+  padding: 0 30px;
   text-align: center;
   top: 0;
   height: 100%;
@@ -483,7 +502,6 @@ select {
     transform: translateX(100%);
     opacity: 0;
   }
-
   to {
     transform: translateX(0);
     opacity: 1;
@@ -494,9 +512,88 @@ select {
   from {
     opacity: 1;
   }
-
   to {
     opacity: 0;
   }
 }
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .container {
+    min-height: 600px;
+  }
+
+  .form-container {
+    width: 100%;
+  }
+
+  .sign-in-container {
+    transform: translateX(0);
+  }
+
+  .container.right-panel-active .sign-in-container {
+    transform: translateX(100%);
+  }
+
+  .sign-up-container {
+    left: 0;
+    transform: translateX(100%);
+  }
+
+  .container.right-panel-active .sign-up-container {
+    transform: translateX(0);
+  }
+
+  .overlay-container {
+    display: none;
+  }
+
+  form {
+    padding: 0 20px;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .tagline {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .title{
+    font-size: 76px;
+  }
+  
+}
+
+@media (max-width: 480px) {
+  .container {
+    min-height: 500px;
+  }
+
+  button {
+    padding: 10px 35px;
+    font-size: 11px;
+  }
+
+  form {
+    padding: 0 15px;
+  }
+
+  input, select {
+    padding: 10px 12px;
+  }
+
+  .header h1 {
+    font-size: 1.3rem;
+  }
+
+  .tagline {
+    font-size: 0.8rem;
+  }
+}
+
+ 
 </style>
