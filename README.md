@@ -179,7 +179,6 @@ This project is licensed under the MIT License - see the LICENSE.md file for det
 ✉️ Contact
 For questions or feedback, please contact:
 
-Email: developer@example.com
+Email: chinchejay@gmail.com
 
-GitHub: @yourusername
 
