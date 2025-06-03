@@ -125,9 +125,13 @@ Configure .env:
 
 env
 MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/chargeTrack
+
 JWT_SECRET=your_secure_jwt_secret
+
 JWT_EXPIRE=30d
+
 PORT=9000
+
 Start the server:
 
 
