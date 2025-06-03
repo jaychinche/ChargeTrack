@@ -117,6 +117,8 @@ exports.createChargingStation = async (req, res, next) => {
   try {
     // Verify admin
     const user = await verifyAdmin(req.headers.authorization);
+    
+    console.log('Request body:', req.body);
 
     // 2. Parse latitude and longitude
     let latitude, longitude;
