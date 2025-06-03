@@ -112,11 +112,8 @@ ChargeTrack is a full-stack web application for managing and visualizing Electri
 1. Clone the repository
 2. Navigate to backend directory:
   
-   cd backend
 
-
-
-   Install dependencies:
+Install dependencies:
 
 bash
 npm install
@@ -133,46 +130,37 @@ JWT_EXPIRE=30d
 PORT=9000
 Start the server:
 
-bash
+
 npm run dev
 Frontend Setup
 Navigate to frontend directory:
-
-bash
 cd frontend
-Install dependencies:
 
-bash
+
+
 npm install
 Configure API base URL in src/config.js:
 
-javascript
 export const API_BASE_URL = 'https://chargetrack-backend.onrender.com/api';
 Start development server:
-
-bash
 npm run dev
+
+
 🌐 Deployment
 Backend
 Push to GitHub repository
-
 Connect to Render.com
-
 Set environment variables
 
 Deploy!
 
 Frontend
 Push to GitHub repository
-
 Connect to Vercel
-
 Set build command: npm run build
-
 Set output directory: dist
 
 Deploy!
-
 📝 License
 This project is licensed under the MIT License - see the LICENSE.md file for details.
 
