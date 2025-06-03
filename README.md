@@ -8,7 +8,7 @@ ChargeTrack is a full-stack web application for managing and visualizing Electri
 |-----------------|---------------------------------------------------------------------|
 | Frontend        | [https://chargetrack-frontend.vercel.app](https://charge-track.vercel.app) |
 | Backend API     | [https://chargetrack-backend.onrender.com/api](https://chargetrack.onrender.com) |
-| Postman Docs    | [View Collection](https://www.postman.com/your-workspace/collections/charge-track) |
+| Postman Docs    | [View Collection](https://elements.getpostman.com/redirect?entityId=45552291-e3b62139-2d25-43e7-acab-28c7c32c84b0&entityType=collection) |
 
 ## ✨ Key Features
 
