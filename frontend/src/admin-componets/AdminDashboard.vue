@@ -756,13 +756,7 @@ export default {
 </script>
 
 <style scoped>
-/* Base Styles */
-.admin-container {
-  display: flex;
-  min-height: 100vh;
-  background-color: #f5f7fa;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+
 /* Sidebar Styles */
 .sidebar {
   width: 280px;
